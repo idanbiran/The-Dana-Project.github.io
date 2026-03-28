@@ -7,41 +7,121 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<style>
-			/* 1. DEFAULT DESKTOP VIEW */
-			.top-logo {
+			/* --- 1. THE "FEMININE PINKISH" THEME OVERRIDE --- */
+			
+			/* Background Overlay (Rose Gold/Pink gradient) */
+			#bg:after {
+				background-image: linear-gradient(to top, rgba(255, 182, 193, 0.8), rgba(255, 240, 245, 0.9));
+				opacity: 0.9;
+			}
+
+			/* Main text and titles (Dark Rose/Bordeaux) */
+			body, h1, h2, h3, h4, h5, h6, #header, #footer {
+				color: #8B475D !important;
+			}
+
+			/* Articles/Popups (Light Cream/Pink background) */
+			#main article {
+				background: rgba(255, 250, 250, 0.95);
+				border-color: #FFB6C1;
+			}
+
+			/* "Major" titles in articles */
+			#main article h2.major {
+				border-bottom-color: #FFB6C1;
+				color: #CD6889 !important;
+			}
+
+			/* Links (Soft Pink) */
+			a {
+				color: #FF69B4 !important;
+				border-bottom-color: rgba(255, 105, 180, 0.5);
+			}
+			a:hover {
+				color: #FF1493 !important;
+				border-bottom-color: #FF1493;
+			}
+
+			/* Buttons (Pink/Rose Gold) */
+			input[type="submit"], input[type="reset"], input[type="button"], button, .button {
+				background-color: transparent;
+				box-shadow: inset 0 0 0 2px #FFB6C1;
+				color: #CD6889 !important;
+			}
+			input[type="submit"]:hover, input[type="reset"]:hover, input[type="button"]:hover, button:hover, .button:hover {
+				background-color: rgba(255, 182, 193, 0.2);
+				box-shadow: inset 0 0 0 2px #FF69B4;
+			}
+			input[type="submit"].primary, input[type="reset"].primary, input[type="button"].primary, button.primary, .button.primary {
+				background-color: #FFB6C1;
+				box-shadow: none;
+				color: #ffffff !important;
+			}
+			input[type="submit"].primary:hover, input[type="reset"].primary:hover, input[type="button"].primary:hover, button.primary:hover, .button.primary:hover {
+				background-color: #FF69B4;
+			}
+
+			/* --- 2. THE TOP LOGO AND JOKE CAPTION --- */
+			
+			/* Container for picture + text */
+			.top-logo-container {
 				position: absolute;
 				top: 40px;
 				left: 40px;
 				z-index: 10000;
-			}
-			.top-logo img {
-				height: 120px; 
-				width: auto;
-				display: block;
-                border-radius: 50%; /* Makes the 'logo' circular and professional */
+				display: flex;
+				align-items: center; /* Vertically centers text with picture */
+				gap: 15px; /* Space between picture and text */
 			}
 
-			/* 2. MOBILE PORTRAIT */
+			/* The Picture (Idan) */
+			.top-logo-container img {
+				height: 100px; 
+				width: 100px;
+				display: block;
+                border-radius: 50%; /* Perfect circle */
+				border: 3px solid #FFB6C1; /* Pink border around Idan */
+				box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+			}
+
+			/* The Joke Caption Text */
+			.pic-caption {
+				color: #CD6889; /* Rose color */
+				font-size: 0.85rem;
+				font-weight: bold;
+				line-height: 1.2;
+				max-width: 150px; /* Wraps the text nicely */
+				font-style: italic;
+				text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.8); /* Ensures it's readable against the BG */
+			}
+
+			/* MOBILE VIEW: Adjust caption for small screens */
 			@media screen and (max-width: 736px) {
-				.top-logo {
+				.top-logo-container {
 					position: relative; 
 					top: 20px;
 					left: 0;
-					text-align: center;
+					justify-content: center; /* Centers everything on mobile */
 					width: 100%;
 					margin-bottom: 20px;
 				}
-				.top-logo img {
-					height: 80px; 
-					margin: 0 auto;
+				.top-logo-container img {
+					height: 70px; 
+					width: 70px;
+				}
+				.pic-caption {
+					max-width: 120px;
+					font-size: 0.75rem;
+					text-align: left;
 				}
 			}
 		</style>
 	</head>
 	<body class="is-preload">
 
-		<div class="top-logo">
-            <img src="images/Idan5crop2.jpg" alt="CEO Dana">
+		<div class="top-logo-container">
+            <img src="images/Idan5crop2.jpg" alt="The Responsible Party">
+			<div class="pic-caption">Believe it or not - he is responsible for all of this</div>
 		</div>
 
 		<div id="wrapper">
@@ -108,7 +188,7 @@
 								<h2 class="major">The Crew</h2>
 								<section>
 									<h3>Chief Executive Household Officer</h3>
-									<span class="image left"><img src="images/Idan5crop2.jpg" alt="CEO Dana" /></span>
+									<span class="image left"><img src="images/Idan5crop2.jpg" alt="CEO Dana" style="border-radius: 50%; border: 2px solid #FFB6C1;" /></span>
 									<h4>Dr. Dana [Lastname]</h4>
 									<p>Lead Engineer of Life. <br />
 									<strong>Email:</strong> <a href="mailto:dana@home.com">Management@Home.office</a></p>
@@ -164,7 +244,7 @@
 							<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
 							<li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
 						</ul>
-						<p class="copyright">&copy; Dana Lab. Design: <a href="https://html5up.net">HTML5 UP</a>. Boss: Dana.</p>
+						<p class="copyright">&copy; Dana Lab. Design: <a href="https://html5up.net">HTML5 UP</a>. Boss: Dana. (Original code: Idan Biran).</p>
 					</footer>
 
 			</div>
