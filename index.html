@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>Dana Lab | Professional Motherhood</title>
+		<title>The Dana Lab | Professional Motherhood</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -11,107 +11,114 @@
 			
 			/* Background Overlay (Rose Gold/Pink gradient) */
 			#bg:after {
-				background-image: linear-gradient(to top, rgba(255, 182, 193, 0.8), rgba(255, 240, 245, 0.9));
+				background-image: linear-gradient(to top, rgba(255, 182, 193, 0.8), rgba(255, 240, 245, 0.9)) !important;
 				opacity: 0.9;
 			}
 
-			/* Main text and titles (Dark Rose/Bordeaux) */
-			body, h1, h2, h3, h4, h5, h6, #header, #footer {
+			/* Global Text Colors (Dark Rose for visibility) */
+			body, h1, h2, h3, h4, h5, h6, p, li, input, textarea {
 				color: #8B475D !important;
+			}
+
+			/* THE NAVIGATION BAR - Darker Pink for contrast */
+			#header nav ul li a {
+				color: #8B475D !important;
+				font-weight: bold;
+				border-bottom: none !important;
+			}
+            #header nav ul li a:hover {
+                background-color: rgba(255, 182, 193, 0.3);
+                color: #FF1493 !important;
+            }
+
+			/* THE CLOSE BUTTON (The X) - Forced to Dark Pink */
+			#main article .close {
+                text-indent: 0 !important;
+                color: #8B475D !important;
+            }
+			#main article .close:before {
+				color: #8B475D !important;
+				font-size: 1.5rem;
+                content: '\f00d'; /* FontAwesome X icon */
+			}
+			#main article .close:hover:before {
+				color: #FF1493 !important;
 			}
 
 			/* Articles/Popups (Light Cream/Pink background) */
 			#main article {
-				background: rgba(255, 250, 250, 0.95);
-				border-color: #FFB6C1;
+				background: rgba(255, 250, 250, 0.98) !important;
+				border-color: #FFB6C1 !important;
 			}
 
 			/* "Major" titles in articles */
 			#main article h2.major {
-				border-bottom-color: #FFB6C1;
+				border-bottom-color: #FFB6C1 !important;
 				color: #CD6889 !important;
 			}
 
-			/* Links (Soft Pink) */
+			/* Links (Vibrant Pink) */
 			a {
-				color: #FF69B4 !important;
-				border-bottom-color: rgba(255, 105, 180, 0.5);
+				color: #D02090 !important;
+				border-bottom-color: rgba(208, 32, 144, 0.5) !important;
 			}
 			a:hover {
 				color: #FF1493 !important;
-				border-bottom-color: #FF1493;
+				border-bottom-color: #FF1493 !important;
 			}
 
-			/* Buttons (Pink/Rose Gold) */
-			input[type="submit"], input[type="reset"], input[type="button"], button, .button {
-				background-color: transparent;
-				box-shadow: inset 0 0 0 2px #FFB6C1;
-				color: #CD6889 !important;
-			}
-			input[type="submit"]:hover, input[type="reset"]:hover, input[type="button"]:hover, button:hover, .button:hover {
-				background-color: rgba(255, 182, 193, 0.2);
-				box-shadow: inset 0 0 0 2px #FF69B4;
-			}
-			input[type="submit"].primary, input[type="reset"].primary, input[type="button"].primary, button.primary, .button.primary {
-				background-color: #FFB6C1;
-				box-shadow: none;
-				color: #ffffff !important;
-			}
-			input[type="submit"].primary:hover, input[type="reset"].primary:hover, input[type="button"].primary:hover, button.primary:hover, .button.primary:hover {
-				background-color: #FF69B4;
-			}
+            /* Footer Icons */
+            #footer .icons a {
+                color: #8B475D !important;
+            }
 
 			/* --- 2. THE TOP LOGO AND JOKE CAPTION --- */
 			
-			/* Container for picture + text */
 			.top-logo-container {
 				position: absolute;
 				top: 40px;
 				left: 40px;
 				z-index: 10000;
 				display: flex;
-				align-items: center; /* Vertically centers text with picture */
-				gap: 15px; /* Space between picture and text */
+				align-items: center;
+				gap: 15px;
 			}
 
-			/* The Picture (Idan) */
 			.top-logo-container img {
 				height: 100px; 
 				width: 100px;
 				display: block;
-                border-radius: 50%; /* Perfect circle */
-				border: 3px solid #FFB6C1; /* Pink border around Idan */
+                border-radius: 50%;
+				border: 3px solid #FFB6C1;
 				box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 			}
 
-			/* The Joke Caption Text */
 			.pic-caption {
-				color: #CD6889; /* Rose color */
-				font-size: 0.85rem;
-				font-weight: bold;
+				color: #8B475D; 
+				font-size: 0.95rem;
+				font-weight: 800;
 				line-height: 1.2;
-				max-width: 150px; /* Wraps the text nicely */
+				max-width: 160px;
 				font-style: italic;
-				text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.8); /* Ensures it's readable against the BG */
+				text-shadow: 1px 1px 0px #ffffff;
 			}
 
-			/* MOBILE VIEW: Adjust caption for small screens */
 			@media screen and (max-width: 736px) {
 				.top-logo-container {
 					position: relative; 
 					top: 20px;
 					left: 0;
-					justify-content: center; /* Centers everything on mobile */
+					justify-content: center;
 					width: 100%;
 					margin-bottom: 20px;
 				}
 				.top-logo-container img {
-					height: 70px; 
-					width: 70px;
+					height: 80px; 
+					width: 80px;
 				}
 				.pic-caption {
-					max-width: 120px;
-					font-size: 0.75rem;
+					max-width: 140px;
+					font-size: 0.85rem;
 					text-align: left;
 				}
 			}
@@ -120,7 +127,7 @@
 	<body class="is-preload">
 
 		<div class="top-logo-container">
-            <img src="images/Idan5crop2.jpg" alt="The Responsible Party">
+			<img src="images/Idan5crop2.jpg" alt="The Responsible Party">
 			<div class="pic-caption">Believe it or not - he is responsible for all of this</div>
 		</div>
 
@@ -153,6 +160,7 @@
 								<p>At the <strong>Dana Lab for Dynamic <i>in situ</i> Motherhood</strong>, we specialize in visualizing missing toys before they are even lost. Our research focuses on using state-of-the-art "Mom Vision" to observe dynamic tantrums at high resolution under real-life environmental conditions (usually Target or the Living Room).</p>
 								<p>By combining advanced multi-tasking with high-speed snack deployment, we bridge the gap between "I'm hungry" and "Dinner is in 5 minutes." Our mission is to uncover the fundamental mechanisms driving laundry cycles and toy-box entropy.</p>
 								<p>We are always looking for quiet and motivated children to join our journey, provided they clean up their Legos first.</p>
+                                <div class="close"></div>
 							</article>
 
 						<article id="research">
@@ -160,13 +168,14 @@
 								
 								<section>
 									<h3>1. Heterogeneous Snack Logistics via <i>Operando</i> Kitchen</h3>
-									<p>Our research focuses on fundamentally redefining the use of the refrigerator for studying hunger in reactive small humans. Instead of treating "The Mess" as a constraint, we treat it as a primary scientific resource. By coordinating multiple modalities—including the Air Fryer and the Microwave—we aim to follow the same chicken nugget over time under true working conditions. This allows us to map exactly where a tantrum initiates and how many goldfish crackers are required to neutralize the environment.</p>
+									<p>Our research focuses on fundamentally redefining the use of the refrigerator for studying hunger in reactive small humans. Instead of treating "The Mess" as a constraint, we treat it as a primary scientific resource. By coordinating multiple modalities—including the Air Fryer and the Microwave—we aim to follow the same chicken nugget over time under true working conditions.</p>
 								</section>
 
 								<section>
 									<h3>2. Sleep-Sensitive Schedule Design</h3>
-									<p>We address the critical challenge of managing highly beam-sensitive materials (Toddlers) during the 7:00 PM Bedtime Phase. By leveraging adaptive low-voice workflows and advanced "Reverse Psychology" techniques, our lab uncovers the earliest stages of sleepiness that are usually obscured by "I need a glass of water" damage. A central pillar of our work is the investigation of <strong>Polymorphism</strong>—the ability of a child to exist in multiple forms: "Angel" (while sleeping) and "Chaos Agent" (while awake).</p>
+									<p>We address the critical challenge of managing highly beam-sensitive materials (Toddlers) during the 7:00 PM Bedtime Phase. By leveraging adaptive low-voice workflows and advanced "Reverse Psychology" techniques, our lab uncovers the earliest stages of sleepiness. A central pillar of our work is the investigation of <strong>Polymorphism</strong>—the ability of a child to exist in multiple forms: "Angel" (while sleeping) and "Chaos Agent" (while awake).</p>
 								</section>
+                                <div class="close"></div>
 						</article>
 					
 						<article id="news">
@@ -182,6 +191,7 @@
 										<strong>October 2025:</strong> Dana joins the Faculty of 'Not Having It' after the 400th 'Why?' of the morning.
 									</li>
 								</ul>
+                                <div class="close"></div>
 							</article>
 
 						<article id="team">
@@ -189,7 +199,7 @@
 								<section>
 									<h3>Chief Executive Household Officer</h3>
 									<span class="image left"><img src="images/Idan5crop2.jpg" alt="CEO Dana" style="border-radius: 50%; border: 2px solid #FFB6C1;" /></span>
-									<h4>Dr. Dana [Lastname]</h4>
+									<h4>Dr. Dana</h4>
 									<p>Lead Engineer of Life. <br />
 									<strong>Email:</strong> <a href="mailto:dana@home.com">Management@Home.office</a></p>
 									<p>Dana leads the Lab, focusing on the development of <i>in situ</i> patience methodologies for atomic-scale observation of messy rooms. Previously, she conducted research on "How to drink coffee while it is still hot."</p>
@@ -208,10 +218,11 @@
 										<p>Research involves atmospheric-pressure juice spills and studying the degradation of white carpets.</p>
 									</div>
 								</section>
+                                <div class="close"></div>
 							</article>
 
 						<article id="publications">
-								<h2 class="major">The 'Rules' (Publications)</h2>
+								<h2 class="major">The 'Rules'</h2>
 								<p><em>* Denotes equal contribution to the mess</em></p>
 								<ul class="alt">
 									<li><strong>"Where is my other shoe?": A 50-minute investigation</strong>. <em>Journal of Hallway Science</em>, <strong>(2026)</strong>.</li>
@@ -219,6 +230,7 @@
 									<li><strong>Cryo-tomography of the Vegetable Drawer: Revealing the Mystery Broccoli</strong>. <em>Kitchen Science</em>, <strong>(2024)</strong>.</li>
 									<li><strong>Highly Conductive Robust Coffee Networks for Tired Parents</strong>. <em>Advanced Functional Beverages</em>, <strong>(2023)</strong>.</li>
 								</ul>
+                                <div class="close"></div>
 							</article>
 
 						<article id="contact">
@@ -229,22 +241,13 @@
 									<li><a href="mailto:yours@email.com?subject=Snack Request" class="button primary icon solid fa-envelope">Submit Snack Request</a></li>
 									<li><a href="#" class="button icon brands fa-linkedin-in">LinkedIn (For Bragging)</a></li>
 								</ul>
-
-								<hr />
-								
-								<p><strong>Location:</strong><br />
-								The Kitchen Island, Building 1<br />
-								The Home Office, Living Room HQ</p>
+                                <div class="close"></div>
 							</article>
 
 					</div>
 
 				<footer id="footer">
-						<ul class="icons">
-							<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-							<li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-						</ul>
-						<p class="copyright">&copy; Dana Lab. Design: <a href="https://html5up.net">HTML5 UP</a>. Boss: Dana. (Original code: Idan Biran).</p>
+						<p class="copyright">&copy; Dana Lab. Design: <a href="https://html5up.net">HTML5 UP</a>. Boss: Dana. (Maintained by Idan).</p>
 					</footer>
 
 			</div>
