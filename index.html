@@ -7,69 +7,80 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<style>
-			/* --- 1. THE "FEMININE PINKISH" THEME OVERRIDE --- */
+			/* --- 1. THE "FEMININE PINKISH" THEME (NO WHITE ALLOWED) --- */
 			
-			/* Background Overlay (Rose Gold/Pink gradient) */
+			/* Background Overlay (Soft Pink) */
 			#bg:after {
 				background-image: linear-gradient(to top, rgba(255, 182, 193, 0.8), rgba(255, 240, 245, 0.9)) !important;
 				opacity: 0.9;
 			}
 
-			/* Global Text Colors (Dark Rose for visibility) */
-			body, h1, h2, h3, h4, h5, h6, p, li, input, textarea {
-				color: #8B475D !important;
+			/* FORCE ALL TEXT TO DARK BURGUNDY */
+			body, h1, h2, h3, h4, h5, h6, p, li, input, textarea, strong, span, div {
+				color: #5D2E3C !important; /* Very dark brownish-pink */
 			}
 
-			/* THE NAVIGATION BAR - Darker Pink for contrast */
+			/* THE NAVIGATION BAR - Dark & Bold */
 			#header nav ul li a {
-				color: #8B475D !important;
-				font-weight: bold;
+				color: #5D2E3C !important;
+				font-weight: 900 !important;
 				border-bottom: none !important;
 			}
             #header nav ul li a:hover {
-                background-color: rgba(255, 182, 193, 0.3);
-                color: #FF1493 !important;
+                background-color: rgba(205, 104, 137, 0.2);
+                color: #B03060 !important;
             }
 
-			/* THE CLOSE BUTTON (The X) - Forced to Dark Pink */
+			/* THE CLOSE BUTTON (The X) - Dark Burgundy */
 			#main article .close {
                 text-indent: 0 !important;
-                color: #8B475D !important;
+                color: #5D2E3C !important;
             }
 			#main article .close:before {
-				color: #8B475D !important;
-				font-size: 1.5rem;
-                content: '\f00d'; /* FontAwesome X icon */
+				color: #5D2E3C !important;
+				font-size: 1.8rem;
+                font-weight: 900;
 			}
 			#main article .close:hover:before {
-				color: #FF1493 !important;
+				color: #B03060 !important;
 			}
 
-			/* Articles/Popups (Light Cream/Pink background) */
+			/* Articles/Popups (Opaque Light Pink - No transparency to keep text sharp) */
 			#main article {
-				background: rgba(255, 250, 250, 0.98) !important;
-				border-color: #FFB6C1 !important;
+				background: #FFF0F5 !important; 
+				border: 2px solid #CD6889 !important;
 			}
 
-			/* "Major" titles in articles */
+			/* Section Dividers */
 			#main article h2.major {
-				border-bottom-color: #FFB6C1 !important;
-				color: #CD6889 !important;
+				border-bottom-color: #CD6889 !important;
+				color: #8B475D !important;
 			}
 
-			/* Links (Vibrant Pink) */
+			/* Links (Very Dark Pink) */
 			a {
-				color: #D02090 !important;
-				border-bottom-color: rgba(208, 32, 144, 0.5) !important;
+				color: #8B1E3F !important;
+				border-bottom-color: #8B1E3F !important;
+				font-weight: bold;
 			}
 			a:hover {
-				color: #FF1493 !important;
-				border-bottom-color: #FF1493 !important;
+				color: #B03060 !important;
 			}
+
+            /* Buttons (Dark Borders, No White Text) */
+            .button, button, input[type="submit"] {
+                box-shadow: inset 0 0 0 2px #5D2E3C !important;
+                color: #5D2E3C !important;
+            }
+            .button.primary {
+                background-color: #CD6889 !important;
+                color: #5D2E3C !important; /* Dark text on pink button */
+                box-shadow: none !important;
+            }
 
             /* Footer Icons */
             #footer .icons a {
-                color: #8B475D !important;
+                color: #5D2E3C !important;
             }
 
 			/* --- 2. THE TOP LOGO AND JOKE CAPTION --- */
@@ -89,18 +100,20 @@
 				width: 100px;
 				display: block;
                 border-radius: 50%;
-				border: 3px solid #FFB6C1;
-				box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+				border: 4px solid #CD6889;
+				box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 			}
 
 			.pic-caption {
-				color: #8B475D; 
-				font-size: 0.95rem;
-				font-weight: 800;
+				color: #5D2E3C; 
+				font-size: 1rem;
+				font-weight: 900;
 				line-height: 1.2;
 				max-width: 160px;
 				font-style: italic;
-				text-shadow: 1px 1px 0px #ffffff;
+				background: rgba(255, 240, 245, 0.7);
+				padding: 5px;
+				border-radius: 5px;
 			}
 
 			@media screen and (max-width: 736px) {
@@ -115,11 +128,6 @@
 				.top-logo-container img {
 					height: 80px; 
 					width: 80px;
-				}
-				.pic-caption {
-					max-width: 140px;
-					font-size: 0.85rem;
-					text-align: left;
 				}
 			}
 		</style>
@@ -157,23 +165,20 @@
 						<article id="about">
 								<h2 class="major">The CEO</h2>
 								<h3>Welcome to the Dana Lab</h3>
-								<p>At the <strong>Dana Lab for Dynamic <i>in situ</i> Motherhood</strong>, we specialize in visualizing missing toys before they are even lost. Our research focuses on using state-of-the-art "Mom Vision" to observe dynamic tantrums at high resolution under real-life environmental conditions (usually Target or the Living Room).</p>
-								<p>By combining advanced multi-tasking with high-speed snack deployment, we bridge the gap between "I'm hungry" and "Dinner is in 5 minutes." Our mission is to uncover the fundamental mechanisms driving laundry cycles and toy-box entropy.</p>
-								<p>We are always looking for quiet and motivated children to join our journey, provided they clean up their Legos first.</p>
+								<p>At the <strong>Dana Lab for Dynamic <i>in situ</i> Motherhood</strong>, we specialize in visualizing missing toys before they are even lost. Our research focuses on using state-of-the-art "Mom Vision" to observe dynamic tantrums at high resolution.</p>
+								<p>By combining advanced multi-tasking with high-speed snack deployment, we bridge the gap between "I'm hungry" and "Dinner is in 5 minutes."</p>
                                 <div class="close"></div>
 							</article>
 
 						<article id="research">
 								<h2 class="major">Core Operations</h2>
-								
 								<section>
-									<h3>1. Heterogeneous Snack Logistics via <i>Operando</i> Kitchen</h3>
-									<p>Our research focuses on fundamentally redefining the use of the refrigerator for studying hunger in reactive small humans. Instead of treating "The Mess" as a constraint, we treat it as a primary scientific resource. By coordinating multiple modalities—including the Air Fryer and the Microwave—we aim to follow the same chicken nugget over time under true working conditions.</p>
+									<h3>1. Heterogeneous Snack Logistics</h3>
+									<p>Our research focuses on fundamentally redefining the use of the refrigerator. Instead of treating "The Mess" as a constraint, we treat it as a primary scientific resource.</p>
 								</section>
-
 								<section>
 									<h3>2. Sleep-Sensitive Schedule Design</h3>
-									<p>We address the critical challenge of managing highly beam-sensitive materials (Toddlers) during the 7:00 PM Bedtime Phase. By leveraging adaptive low-voice workflows and advanced "Reverse Psychology" techniques, our lab uncovers the earliest stages of sleepiness. A central pillar of our work is the investigation of <strong>Polymorphism</strong>—the ability of a child to exist in multiple forms: "Angel" (while sleeping) and "Chaos Agent" (while awake).</p>
+									<p>We address the critical challenge of managing highly beam-sensitive materials (Toddlers) during the 7:00 PM Bedtime Phase.</p>
 								</section>
                                 <div class="close"></div>
 						</article>
@@ -181,15 +186,9 @@
 						<article id="news">
 								<h2 class="major">Lab Updates</h2>
 								<ul class="alt">
-									<li>
-										<strong>March 2026:</strong> The Dana Lab website is live! (Please do not click while crying).
-									</li>
-									<li>
-										<strong>January 2026:</strong> Latest paper on "The Physics of the Unfolded Laundry Pile" published in <em>The Mom Times</em>.
-									</li>
-									<li>
-										<strong>October 2025:</strong> Dana joins the Faculty of 'Not Having It' after the 400th 'Why?' of the morning.
-									</li>
+									<li><strong>March 2026:</strong> The Dana Lab website is live!</li>
+									<li><strong>January 2026:</strong> Latest paper on "The Physics of the Unfolded Laundry Pile" published.</li>
+									<li><strong>October 2025:</strong> Dana joins the Faculty of 'Not Having It'.</li>
 								</ul>
                                 <div class="close"></div>
 							</article>
@@ -198,48 +197,28 @@
 								<h2 class="major">The Crew</h2>
 								<section>
 									<h3>Chief Executive Household Officer</h3>
-									<span class="image left"><img src="images/Idan5crop2.jpg" alt="CEO Dana" style="border-radius: 50%; border: 2px solid #FFB6C1;" /></span>
+									<span class="image left"><img src="images/Idan5crop2.jpg" alt="CEO Dana" style="border-radius: 50%; border: 4px solid #CD6889;" /></span>
 									<h4>Dr. Dana</h4>
 									<p>Lead Engineer of Life. <br />
-									<strong>Email:</strong> <a href="mailto:dana@home.com">Management@Home.office</a></p>
-									<p>Dana leads the Lab, focusing on the development of <i>in situ</i> patience methodologies for atomic-scale observation of messy rooms. Previously, she conducted research on "How to drink coffee while it is still hot."</p>
-								</section>
-								<hr />
-								<section>
-									<h3>Associate Chaos Agents</h3>
-									<div style="margin-bottom: 2rem;">
-										<h4>The First Born</h4>
-										<p><strong>Senior Noise Specialist</strong></p>
-										<p>Focuses on the kinetics of running in the house and high-volume vocal testing.</p>
-									</div>
-									<div style="margin-bottom: 2rem;">
-										<h4>The Second Born</h4>
-										<p><strong>Lead Mess Developer</strong></p>
-										<p>Research involves atmospheric-pressure juice spills and studying the degradation of white carpets.</p>
-									</div>
+									<strong>Contact:</strong> Management@Home.office</p>
+									<p>Dana leads the Lab, focusing on the development of <i>in situ</i> patience methodologies.</p>
 								</section>
                                 <div class="close"></div>
 							</article>
 
 						<article id="publications">
 								<h2 class="major">The 'Rules'</h2>
-								<p><em>* Denotes equal contribution to the mess</em></p>
 								<ul class="alt">
-									<li><strong>"Where is my other shoe?": A 50-minute investigation</strong>. <em>Journal of Hallway Science</em>, <strong>(2026)</strong>.</li>
-									<li><strong>The Molecular Basis of Sugar Rushes in Small Humans</strong>. <em>Small (Humans) Journal</em>, <strong>(2026)</strong>.</li>
-									<li><strong>Cryo-tomography of the Vegetable Drawer: Revealing the Mystery Broccoli</strong>. <em>Kitchen Science</em>, <strong>(2024)</strong>.</li>
-									<li><strong>Highly Conductive Robust Coffee Networks for Tired Parents</strong>. <em>Advanced Functional Beverages</em>, <strong>(2023)</strong>.</li>
+									<li><strong>"Where is my other shoe?": A 50-minute investigation</strong>. <em>Journal of Hallway Science</em>.</li>
+									<li><strong>The Molecular Basis of Sugar Rushes</strong>. <em>Small (Humans) Journal</em>.</li>
 								</ul>
                                 <div class="close"></div>
 							</article>
 
 						<article id="contact">
 								<h2 class="major">Submit a Request</h2>
-								<p>We are always looking for motivated snack-bringers. Please note that requests for "Screen Time" are currently under peer review.</p>
-								
 								<ul class="actions stacked">
-									<li><a href="mailto:yours@email.com?subject=Snack Request" class="button primary icon solid fa-envelope">Submit Snack Request</a></li>
-									<li><a href="#" class="button icon brands fa-linkedin-in">LinkedIn (For Bragging)</a></li>
+									<li><a href="mailto:yours@email.com" class="button primary icon solid fa-envelope">Submit Snack Request</a></li>
 								</ul>
                                 <div class="close"></div>
 							</article>
@@ -247,7 +226,7 @@
 					</div>
 
 				<footer id="footer">
-						<p class="copyright">&copy; Dana Lab. Design: <a href="https://html5up.net">HTML5 UP</a>. Boss: Dana. (Maintained by Idan).</p>
+						<p class="copyright">&copy; Dana Lab. Boss: Dana. Maintained by Idan.</p>
 					</footer>
 
 			</div>
