@@ -7,81 +7,75 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<style>
-			/* --- 1. THE "FEMININE PINKISH" THEME (NO WHITE ALLOWED) --- */
+			/* --- 1. THE "FEMININE PINKISH" THEME (NO WHITE) --- */
 			
-			/* Background Overlay (Soft Pink) */
 			#bg:after {
 				background-image: linear-gradient(to top, rgba(255, 182, 193, 0.8), rgba(255, 240, 245, 0.9)) !important;
 				opacity: 0.9;
 			}
 
-			/* FORCE ALL TEXT TO DARK BURGUNDY */
+			/* GLOBAL TEXT - Dark Burgundy */
 			body, h1, h2, h3, h4, h5, h6, p, li, input, textarea, strong, span, div {
-				color: #5D2E3C !important; /* Very dark brownish-pink */
+				color: #4A1E2C !important; /* Even darker for maximum contrast */
 			}
 
-			/* THE NAVIGATION BAR - Dark & Bold */
+			/* FIX: THE SUB-HEADER ON MAIN PAGE */
+			#header p {
+				color: #3B1420 !important; /* Deepest Burgundy for that specific line */
+				font-weight: 700 !important;
+				text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.5);
+			}
+
+			/* THE NAVIGATION BAR */
 			#header nav ul li a {
-				color: #5D2E3C !important;
+				color: #4A1E2C !important;
 				font-weight: 900 !important;
 				border-bottom: none !important;
 			}
             #header nav ul li a:hover {
-                background-color: rgba(205, 104, 137, 0.2);
-                color: #B03060 !important;
+                background-color: rgba(205, 104, 137, 0.3);
             }
 
-			/* THE CLOSE BUTTON (The X) - Dark Burgundy */
+			/* FIX: THE CLOSE BUTTON (X ONLY) */
 			#main article .close {
-                text-indent: 0 !important;
-                color: #5D2E3C !important;
+                text-indent: -9999px; /* This hides the word "Close" */
+                overflow: hidden;
+                width: 3rem;
+                height: 3rem;
+                color: #3B1420 !important;
             }
 			#main article .close:before {
-				color: #5D2E3C !important;
-				font-size: 1.8rem;
+				text-indent: 0; /* This brings back the X */
+                float: left;
+                width: 100%;
+                text-align: center;
+                color: #3B1420 !important; /* Dark X */
+				font-size: 1.5rem;
                 font-weight: 900;
+                content: '\f00d'; /* FontAwesome X icon */
+                display: block;
 			}
 			#main article .close:hover:before {
 				color: #B03060 !important;
 			}
 
-			/* Articles/Popups (Opaque Light Pink - No transparency to keep text sharp) */
+			/* Popups */
 			#main article {
-				background: #FFF0F5 !important; 
-				border: 2px solid #CD6889 !important;
+				background: #FFF5F7 !important; 
+				border: 3px solid #CD6889 !important;
 			}
 
-			/* Section Dividers */
 			#main article h2.major {
 				border-bottom-color: #CD6889 !important;
-				color: #8B475D !important;
+				color: #8B1E3F !important;
 			}
 
-			/* Links (Very Dark Pink) */
+			/* Links */
 			a {
 				color: #8B1E3F !important;
 				border-bottom-color: #8B1E3F !important;
 				font-weight: bold;
 			}
-			a:hover {
-				color: #B03060 !important;
-			}
-
-            /* Buttons (Dark Borders, No White Text) */
-            .button, button, input[type="submit"] {
-                box-shadow: inset 0 0 0 2px #5D2E3C !important;
-                color: #5D2E3C !important;
-            }
-            .button.primary {
-                background-color: #CD6889 !important;
-                color: #5D2E3C !important; /* Dark text on pink button */
-                box-shadow: none !important;
-            }
-
-            /* Footer Icons */
-            #footer .icons a {
-                color: #5D2E3C !important;
-            }
 
 			/* --- 2. THE TOP LOGO AND JOKE CAPTION --- */
 			
@@ -105,13 +99,13 @@
 			}
 
 			.pic-caption {
-				color: #5D2E3C; 
-				font-size: 1rem;
+				color: #3B1420; 
+				font-size: 0.95rem;
 				font-weight: 900;
 				line-height: 1.2;
 				max-width: 160px;
 				font-style: italic;
-				background: rgba(255, 240, 245, 0.7);
+				background: rgba(255, 255, 255, 0.4);
 				padding: 5px;
 				border-radius: 5px;
 			}
@@ -145,7 +139,7 @@
 						<div class="content">
 							<div class="inner">
 								<h1>The Dana Lab for Dynamic Household Ops</h1>
-								<p>Exploring high-pressure reactions at real-life conditions with zero sleep at <a href="#">The Home Office (HQ)</a>.</p>
+								<p>Exploring high-pressure reactions at real-life conditions with zero sleep at <a href="https://idanbiran.github.io/The-Dana-Project.github.io/">The Home Office (HQ)</a>.</p>
 							</div>
 						</div>
 						<nav>
@@ -197,7 +191,7 @@
 								<h2 class="major">The Crew</h2>
 								<section>
 									<h3>Chief Executive Household Officer</h3>
-									<span class="image left"><img src="images/tiredDana.jpg" alt="CEO Dana" style="border-radius: 50%; border: 4px solid #CD6889;" /></span>
+									<span class="image left"><img src="images/Idan5crop2.jpg" alt="CEO Dana" style="border-radius: 50%; border: 4px solid #CD6889;" /></span>
 									<h4>Dr. Dana</h4>
 									<p>Lead Engineer of Life. <br />
 									<strong>Contact:</strong> Management@Home.office</p>
